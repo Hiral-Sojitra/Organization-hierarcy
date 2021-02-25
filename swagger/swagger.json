@@ -1,0 +1,121 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Organization Chart",
+        "description": "",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host": "localhost:3007",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Organization Chart",
+            "description": "API for Organization Chart in the system"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header"
+            }
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/org-chart/create": {
+            "post": {
+                "tags": [
+                    "request to create Organization chart"
+                ],
+                "summary": "create Organization chart",
+                "parameters": [
+                    {
+                        "name": "Organization chart",
+                        "in": "body",
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "orgChartName": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "response": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/org-chart/edit": {
+            "post": {
+                "tags": [
+                    "request to edit Organization chart"
+                ],
+                "summary": "edit Organization chart",
+                "parameters": [
+                    {
+                        "name": "Organization chart",
+                        "in": "body",
+                        "description": "",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "_id": {
+                                    "type": "string"
+                                },
+                                "userId": {
+                                    "type": "string"
+                                },
+                                "parentId": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "response": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        },
+        "/org-chart/:id": {
+            "get": {
+                "tags": [
+                    "request to view Organization chart"
+                ],
+                "summary": "view Organization chart",
+                "parameters": [
+                    {
+                        "name": "Organization chart",
+                        "in": "body",
+                        "description": ""
+                    }
+                ],
+                "response": {
+                    "200": {
+                        "description": "Success"
+                    }
+                }
+            }
+        }
+    }
+}
